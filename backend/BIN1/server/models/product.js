@@ -16,13 +16,20 @@ Product.init(
         allowNulll : false, // le produit a forcement un nom
         unique : true, // un seul produit porte ce nom
       },
-      description: DataTypes.TEXT,
+      description: {
+        type : DataTypes.TEXT,
+      },
       price : {
         type : DataTypes.FLOAT,
         allowNulll : false,
       },
-      creation : DataTypes.DATE, // date de creation 
-      update : DataTypes.DATE, // date de maj 
+      creation : {
+        type : DataTypes.DATE,
+      }, // date de creation 
+
+      update : {
+        type : DataTypes.DATE,
+      }, // date de maj 
       },
 
     P2: { //pareil pour le produit 2 etc
@@ -31,13 +38,21 @@ Product.init(
         allowNulll : false, // le produit a forcement un nom
         unique : true, // un seul produit porte ce nom
       },
-      description: DataTypes.TEXT,
+      description: {
+        type : DataTypes.TEXT,
+      },
       price : {
         type : DataTypes.FLOAT,
         allowNulll : false,
       },
-      creation : DataTypes.DATE, // date de creation 
-      update : DataTypes.DATE, // date de maj 
+      creation : {
+        type : DataTypes.DATE,
+      }, // date de creation 
+
+      update : {
+        type : DataTypes.DATE,
+      }, // date de maj 
+
       },
 
       P3: {
@@ -46,13 +61,20 @@ Product.init(
           allowNulll : false, // le produit a forcement un nom
           unique : true, // un seul produit porte ce nom
         },
-        description: DataTypes.TEXT,
+        description: {
+          type : DataTypes.TEXT,
+        },
         price : {
           type : DataTypes.FLOAT,
-          allownulll : false,
+          allowNulll : false,
         },
-        creation : DataTypes.DATE, // date de creation 
-        update : DataTypes.DATE, // date de maj 
+        creation : {
+          type : DataTypes.DATE,
+        }, // date de creation 
+  
+        update : {
+          type : DataTypes.DATE,
+        }, // date de maj 
         },
 
   },
