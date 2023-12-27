@@ -17,7 +17,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTcwMDIyNzc4NywiZXhwIjoxNzA4MDAzNzg3fQ.u0UDUEoCIHysGlf_KlKM4DfA8xtHBNfzo4Non9eF6Ss
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMzcxNDkxMCwiZXhwIjoxNzExNDkwOTEwfQ.KB6Vvw0KKK-Qwa7ZrhUCG5GBH_oKpxrMVAlE422S-9M
 
 ###
 POST http://localhost:3000/users
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/users/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTcwMDIyNzc4NywiZXhwIjoxNzA4MDAzNzg3fQ.u0UDUEoCIHysGlf_KlKM4DfA8xtHBNfzo4Non9eF6Ss
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMzcxNDkxMCwiZXhwIjoxNzExNDkwOTEwfQ.KB6Vvw0KKK-Qwa7ZrhUCG5GBH_oKpxrMVAlE422S-9M
 
 ###
 PATCH http://localhost:3000/users/3
@@ -42,13 +42,11 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTcwMDIyNzc4NywiZXhwIjoxNzA4MDAzNzg3fQ.u0UDUEoCIHysGlf_KlKM4DfA8xtHBNfzo4Non9eF6Ss
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMzcxNDkxMCwiZXhwIjoxNzExNDkwOTEwfQ.KB6Vvw0KKK-Qwa7ZrhUCG5GBH_oKpxrMVAlE422S-9M
 ###
 PATCH http://localhost:3000/users/7
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTcwMDIyNzc4NywiZXhwIjoxNzA4MDAzNzg3fQ.u0UDUEoCIHysGlf_KlKM4DfA8xtHBNfzo4Non9eF6Ss
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMzcxNDkxMCwiZXhwIjoxNzExNDkwOTEwfQ.KB6Vvw0KKK-Qwa7ZrhUCG5GBH_oKpxrMVAlE422S-9M
 {
     "lastname": "Doe2!1zez31425"
 }
@@ -59,4 +57,33 @@ Content-Type: application/json
 {
     "email": "j5@j.com",
     "password": "Azerty123!"
+}
+
+###
+PATCH http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMzcxNDkxMCwiZXhwIjoxNzExNDkwOTEwfQ.KB6Vvw0KKK-Qwa7ZrhUCG5GBH_oKpxrMVAlE422S-9M
+Content-Type: application/json
+
+{
+  "username": "john_doe_updated"
+}
+
+
+###
+GET http://localhost:3000/product
+Content-Type: application/json
+
+{
+  "productId": "01"
+}
+###
+
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+  "Name": "sac",
+  "Description": "description",
+  "Price" : "19.00",
+  "ownerId" : ""
 }

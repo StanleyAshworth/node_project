@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = new Router();
+require("dotenv").config();
 
 router.post("/login", async (req, res, next) => {
   try {
@@ -15,7 +16,7 @@ router.post("/login", async (req, res, next) => {
       res.status(422).json({
         email: "Invalid credentials",
       });
-    else {
+    else { console.log(process.env.JWT_SECRET)
       if (bcrypt.compareSync(req.body.password, user.password)) {
         const token = jwt.sign(
           {

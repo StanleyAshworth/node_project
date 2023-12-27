@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 
 // import d'User
 const User = require("./User");
+
 class Post extends Model {}
 
 //cette entité sert à gerer les posts sur le site 

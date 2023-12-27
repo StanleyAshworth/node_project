@@ -6,14 +6,14 @@ const router = new Router();
 // router pour l'entité product
 
 
-router.get("/product", checkAuth, async (req, res, next) => {
+router.get("/product", async (req, res, next) => {
     //res.status(200).send(JSON.stringify(product));
     if (req.productId) {
       req.query.id = req.productId;
     }
     res.json(
       await Product.findAll({
-        where: req.query,
+        // where: req.query,
       })
     );
   });
