@@ -29,6 +29,10 @@ Product.init(
     update : {
       type : DataTypes.DATE,
     }, // date de maj 
+  },
+
+  {
+    sequelize: connection,
   }
 );
 
