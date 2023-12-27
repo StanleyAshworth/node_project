@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const Post = require("../models/Post");
-const checkAuth = require('./middlewares/checkAuth');
+const checkAuth = require('../middlewares/checkAuth');
 const router = new Router();
 
 // router pour l'entité post
@@ -22,7 +22,7 @@ router.get("/post", checkAuth, async (req, res, next) => {
   // CRUD 
 
   // Create 
-  router.post("/post", async (req, res, next) => {
+  router.post("/post", checkAuth, async (req, res, next) => {
     try {
       res.status(201).json(await Post.create(req.body));
     } catch (err) {
@@ -78,7 +78,7 @@ router.get("/post", checkAuth, async (req, res, next) => {
     res.sendStatus(result === 0 ? 404 : 204);
   });
   
-  router.put("/post/:id", async (req, res, next) => {
+  router.put("/post/:id", checkAuth, async (req, res, next) => {
     try {
       const result = await Post.destroy({
         where: {

@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const Product = require("../models/product");
-const checkAuth = require('./middlewares/checkAuth');
+const checkAuth = require('../middlewares/checkAuth');
 const router = new Router();
 
 // router pour l'entité product

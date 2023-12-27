@@ -13,7 +13,7 @@ class Comment extends Model {}
 Comment.init(
   {
     text: {
-      type : DataTypes.Text,
+      type : DataTypes.TEXT,
       allowNull: false,
     },
   },

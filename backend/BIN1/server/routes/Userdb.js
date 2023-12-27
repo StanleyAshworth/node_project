@@ -3,7 +3,7 @@ const User = require("../models/User");
 const checkAuth = require("../middlewares/checkAuth");
 const router = new Router();
 
-router.get("/user", checkAuth, async (req, res, next) => {
+router.get("/users", checkAuth, async (req, res, next) => {
   //res.status(200).send(JSON.stringify(user));
   if (req.userId) {
     req.query.id = req.userId;
@@ -15,7 +15,7 @@ router.get("/user", checkAuth, async (req, res, next) => {
   );
 });
 
-router.post("/user", async (req, res, next) => {
+router.post("/users", async (req, res, next) => {
   try {
     res.status(201).json(await User.create(req.body));
   } catch (err) {
@@ -25,7 +25,7 @@ router.post("/user", async (req, res, next) => {
   }
 });
 
-router.get("/user/:id", async (req, res, next) => {
+router.get("/users/:id", async (req, res, next) => {
   const user = await User.findByPk(parseInt(req.params.id));
   if (user) {
     res.json(user);
@@ -35,7 +35,7 @@ router.get("/user/:id", async (req, res, next) => {
   }
 });
 
-router.patch("/user/:id", checkAuth, async (req, res, next) => {
+router.patch("/users/:id", checkAuth, async (req, res, next) => {
   if (req.userId !== parseInt(req.params.id)) res.sendStatus(403);
   try {
     const result = await User.update(req.body, {
@@ -56,7 +56,7 @@ router.patch("/user/:id", checkAuth, async (req, res, next) => {
   }
 });
 
-router.delete("/user/:id", checkAuth, async (req, res, next) => {
+router.delete("/users/:id", checkAuth, async (req, res, next) => {
   const result = await User.destroy({
     where: {
       id: parseInt(req.params.id),
@@ -65,7 +65,7 @@ router.delete("/user/:id", checkAuth, async (req, res, next) => {
   res.sendStatus(result === 0 ? 404 : 204);
 });
 
-router.put("/user/:id", async (req, res, next) => {
+router.put("/users/:id", async (req, res, next) => {
   try {
     const result = await User.destroy({
       where: {

@@ -7,7 +7,8 @@ module.exports = function (req, res, next) {
   if (type !== "Bearer") res.sendStatus(401);
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    req.userId = payload.sub;
+    req.userId = payload.sub; // ID de l'utilisateur
+    req.commentId = payload.commentId; // ID du commentaire 
     next();
   } catch (e) {
     res.sendStatus(401);
