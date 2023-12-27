@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const connection = require("./db");
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 
 // import de l'entité User
 const User = require("./User");
