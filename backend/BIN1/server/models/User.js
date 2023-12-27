@@ -36,9 +36,12 @@ User.init(
   }
 );
 
+// avant de creer un user on hache le mdp
 User.addHook("beforeCreate", (user) => {
   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
 });
+
+// avant de mettre à jour un user si le mdp a ete modifie on re hache le mdp
 User.addHook("beforeUpdate", (user, options) => {
   if (options.fields.includes("password")) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));

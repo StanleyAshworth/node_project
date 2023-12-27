@@ -1,6 +1,12 @@
 const express = require("express");
 require('./models/db');
-const UsersRouter = require("./routes/usersDb");
+
+//utilisation des entités dans le fichier principal
+const UsersRouter = require("./routes/Userdb");
+const productRouter = require("./routes/productdb");
+const postRouter = require("./routes/postdb");
+const commentRouter = require("./routes/commentdb");
+
 const SecurityRouter = require("./routes/security");
 const db = require('./models/db');
 
@@ -20,7 +26,12 @@ app.put("/", (req, res, next) => {
   res.send("Hello world from PUT : " + JSON.stringify(req.body));
 });
 
+// on utilise les bases de données de nos entités
 app.use(UsersRouter);
+app.use(productRouter);
+app.use(postRouter);
+app.use(commentRouter);
+
 app.use(SecurityRouter);
 
 app.listen(3000, () => {

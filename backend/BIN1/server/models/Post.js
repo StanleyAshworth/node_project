@@ -8,8 +8,14 @@ class Post extends Model {}
 
 Post.init(
   {
-    title : DataTypes.STRING,
-    content : DataTypes.TEXT,
+    title : {
+      type : DataTypes.STRING,
+      allowNull : false,
+    },
+    content : {
+      type : DataTypes.TEXT,
+      allowNull : false,
+    },
     creation : DataTypes.DATE, // date de reation
     update : DataTypes.DATE, // derniere maj
     },
