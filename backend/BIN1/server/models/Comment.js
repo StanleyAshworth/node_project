@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 
 class Comment extends Model {}
 
+// jai pas encore modifié celui la !!!!
+
 Comment.init(
   {
     email: {
