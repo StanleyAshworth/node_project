@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+const jwt = require('jsonwebtoken');
 
 const DEFAULT_DATABASE_URL = "mysql://root:password@localhost:3306/app";
 
