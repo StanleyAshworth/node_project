@@ -70,7 +70,7 @@ router.get("/product", checkAuth, async (req, res, next) => {
 
   // Delete
   router.delete("/product/:id", checkAuth, async (req, res, next) => {
-    const result = await User.destroy({
+    const result = await Product.destroy({
       where: {
         id: parseInt(req.params.id),
       },

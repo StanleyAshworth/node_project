@@ -70,7 +70,7 @@ router.get("/comment", checkAuth, async (req, res, next) => {
 
   // Delete
   router.delete("/comment/:id", checkAuth, async (req, res, next) => {
-    const result = await User.destroy({
+    const result = await Comment.destroy({ // on delete le comment pas le user
       where: {
         id: parseInt(req.params.id),
       },

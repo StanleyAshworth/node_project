@@ -70,7 +70,7 @@ router.get("/post", checkAuth, async (req, res, next) => {
 
   // Delete
   router.delete("/post/:id", checkAuth, async (req, res, next) => {
-    const result = await User.destroy({
+    const result = await Post.destroy({
       where: {
         id: parseInt(req.params.id),
       },

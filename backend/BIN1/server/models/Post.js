@@ -2,6 +2,8 @@ const { Model, DataTypes } = require("sequelize");
 const connection = require("./db");
 const bcrypt = require("bcryptjs");
 
+// import d'User
+const User = require("./User");
 class Post extends Model {}
 
 //cette entité sert à gerer les posts sur le site 
@@ -25,6 +27,6 @@ Post.init(
   }
 );
 
-post.belongsTo(User, { foreignKey : 'authorId' } );
+Post.belongsTo(User, { foreignKey : 'authorId' } );
 
 module.exports = Post;
